@@ -7,22 +7,20 @@
   }
 }
 
+@mixin modalHidden {
+  opacity: 0;
+  transform: scale(0.2) translate3d(0, -300px, 0);
+}
+
 @keyframes modalIn {
   from {
-    opacity: 0;
-    width: 0;
-    height: 0;
-    bottom: -999px;
+    @include modalHidden;
   }
 }
 
 @keyframes modalOut {
   to {
-    opacity: 0;
-    opacity: 0;
-    width: 0;
-    height: 0;
-    bottom: -999px;
+    @include modalHidden;
   }
 }
 
@@ -37,7 +35,7 @@
   outline: 0;
 
   &-content {
-    position: relative;
+    position: absolute;
     display: flex;
     flex-direction: column;
     width: 100%; // Ensure `.modal-content` extends the full width of the parent `.modal-dialog`
@@ -46,6 +44,8 @@
     background-clip: padding-box;
     outline: 0;
     z-index: 2;
+    left: 0;
+    right: 0;
     margin-left: auto;
     margin-right: auto;
     margin-top: var(--Modal-content-startMarginTop);
@@ -53,6 +53,7 @@
     border: var(--Modal-content-borderWidth) solid
       var(--Modal-content-borderColor);
     border-radius: var(--Modal-content-borderRadius);
+    will-change: width, top, opacity, overflow;
 
     &.in,
     &.out {
