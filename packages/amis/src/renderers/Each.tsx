@@ -1,5 +1,5 @@
 import React from 'react';
-import {Renderer, RendererProps} from 'amis-core';
+import {autobind, Renderer, RendererProps} from 'amis-core';
 import {Schema} from 'amis-core';
 import {resolveVariable, resolveVariableAndFilter} from 'amis-core';
 import {createObject, getPropValue, isObject} from 'amis-core';
@@ -42,6 +42,24 @@ export default class Each extends React.Component<EachProps> {
     placeholder: 'placeholder.noData'
   };
 
+  @autobind
+  handleClose(params: any) {
+    const {dispatchEvent} = this.props;
+    dispatchEvent('close', params);
+  }
+
+  @autobind
+  handleChange(params: any) {
+    const {dispatchEvent} = this.props;
+    dispatchEvent('change', params);
+  }
+
+  @autobind
+  handleClick(params: any) {
+    const {dispatchEvent} = this.props;
+    dispatchEvent('click', params);
+  }
+
   render() {
     const {
       data,
@@ -81,7 +99,10 @@ export default class Each extends React.Component<EachProps> {
                   ? {index, ...item}
                   : {[name]: item, item: item, index}
               ),
-              key: index
+              key: index,
+              onClose: this.handleClose,
+              onClick: this.handleClick,
+              onChange: this.handleChange
             })
           )
         ) : (
