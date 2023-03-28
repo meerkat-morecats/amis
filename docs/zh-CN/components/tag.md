@@ -192,15 +192,17 @@ icon:
 
 ## 属性表
 
-| 属性名      | 类型                                                                                      | 默认值     | 说明                                       |
-| ----------- | ----------------------------------------------------------------------------------------- | ---------- | ------------------------------------------ |
-| displayMode | `'normal' \| 'rounded' \| 'status'`                                                       | `normal`   | 展现模式                                   |
-| color       | `'active' \| 'inactive' \| 'error' \| 'success' \| 'processing' \| 'warning' \| 具体色值` |            | 颜色主题，提供默认主题，并支持自定义颜色值 |
-| label       | `string`                                                                                  | `-`        | 标签内容                                   |
-| icon        | `SchemaIcon`                                                                              | `dot 图标` | status 模式下的前置图标                    |
-| className   | `string`                                                                                  |            | 自定义 CSS 样式类名                        |
-| style       | `object`                                                                                  | {}         | 自定义样式（行内样式），优先级最高         |
-| closable    | `boolean`                                                                                 | `false`    | 是否展示关闭按钮                           |
+| 属性名      | 类型                                                                                      | 默认值       | 说明                                       |
+| ----------- | ----------------------------------------------------------------------------------------- | ------------ | ------------------------------------------ |
+| displayMode | `'normal' \| 'rounded' \| 'status'`                                                       | `normal`     | 展现模式                                   |
+| color       | `'active' \| 'inactive' \| 'error' \| 'success' \| 'processing' \| 'warning' \| 具体色值` |              | 颜色主题，提供默认主题，并支持自定义颜色值 |
+| label       | `string`                                                                                  | `-`          | 标签内容                                   |
+| icon        | `SchemaIcon`                                                                              | `dot 图标`   | status 模式下的前置图标                    |
+| className   | `string`                                                                                  |              | 自定义 CSS 样式类名                        |
+| style       | `object`                                                                                  | {}           | 自定义样式（行内样式），优先级最高         |
+| closable    | `boolean`                                                                                 | `false`      | 是否展示关闭按钮                           |
+| closeIcon   | `SchemaIcon`                                                                              | `close 图标` | 是否展示关闭按钮                           |
+
 
 ## 事件表
 

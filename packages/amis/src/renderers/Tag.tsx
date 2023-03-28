@@ -136,7 +136,8 @@ export class TagField extends React.Component<TagProps, object> {
       className,
       closable,
       data,
-      style = {}
+      style = {},
+      closeIcon
     } = this.props;
 
     const label = this.resolveLabel();
@@ -159,6 +160,7 @@ export class TagField extends React.Component<TagProps, object> {
         displayMode={displayMode}
         color={color}
         icon={icon}
+        closeIcon={closeIcon}
         closable={closable}
         style={style}
         onClick={this.handleClick}

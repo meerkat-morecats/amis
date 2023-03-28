@@ -114,8 +114,7 @@ export class Tag extends React.Component<TagProps> {
       color,
       icon,
       style,
-      label,
-      closable
+      label
     } = this.props;
 
     const isPresetColor =
